@@ -19,9 +19,9 @@ make test-swarm
 # remove docker swarm, once tests complete
 docker swarm leave --force
 
-#setup k3s using k3sup
-curl -sLS https://get.k3sup.dev | sh
-install k3sup /usr/local/bin/
+# setup k3s using k3sup
+sudo curl -sLS https://get.k3sup.dev | sh
+sudo install k3sup /usr/local/bin/
 k3sup install --ip $IP --user $USER_NAME
 k3sup app install openfaas
 
