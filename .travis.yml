@@ -15,3 +15,4 @@ install:
 
 script:
   - find .
+  - bash ./run-e2e-test.sh
