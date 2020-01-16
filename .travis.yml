@@ -22,4 +22,6 @@ install:
 
 script:
   - find .
-  - bash ./run-e2e-test.sh
+  # - bash ./run-e2e-test.sh
+  - bash ./run-e2e-test-docker-swarm.sh
+  - bash ./run-e2e-test-k8s.sh
