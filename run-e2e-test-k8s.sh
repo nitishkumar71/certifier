@@ -11,7 +11,7 @@ export USER_NAME=$(whoami)
 # setup k3s using k3sup
 sudo curl -sLS https://get.k3sup.dev | sh
 sudo install k3sup /usr/local/bin/
-k3sup install --ip $IP --user $USER_NAME --local
+k3sup install --local --ip $IP --user $USER_NAME
 k3sup app install openfaas
 
 # run test in k3s
