@@ -15,5 +15,6 @@ k3sup install --local --ip $IP --user $USER_NAME
 k3sup app install openfaas
 
 # run test in k3s
-export OPENFAAS_URL=http://$IP:31112/
+kubectl port-forward -n openfaas svc/gateway 8080:8080 &
+export OPENFAAS_URL=http://$IP:8080/
 make test-kubernetes
