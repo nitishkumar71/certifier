@@ -9,9 +9,9 @@ export IP=127.0.0.1
 # setup docker swarm 
 docker swarm init
 git clone https://github.com/openfaas/faas.git
-cd faas
-./faas/deploy_stack.sh --no-auth
-cd ..
+# cd faas
+faas/deploy_stack.sh --no-auth
+# cd ..
 # run test in docker swarm
 export OPENFAAS_URL=http://$IP:8080/
 make test-swarm
