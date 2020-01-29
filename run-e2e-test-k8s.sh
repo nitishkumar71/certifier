@@ -7,12 +7,13 @@ fi
 
 export IP=127.0.0.1
 export USER_NAME=$(whoami)
-export KUBECONFIG=/home/$USER_NAME/.kube/config
+export KUBECONFIG_PATH=/home/$USER_NAME/.kube
+export KUBECONFIG=$KUBECONFIG_PATH/config
 
 # setup k3s using k3sup
 sudo curl -sLS https://get.k3sup.dev | sh
 sudo install k3sup /usr/local/bin/
-mkdir -p $KUBECONFIG
+mkdir -p $KUBECONFIG_PATH
 k3sup install --ip $IP --user $USER_NAME
 cp ./kubeconfig $KUBECONFIG
 k3sup app install openfaas
