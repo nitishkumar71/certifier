@@ -17,10 +17,9 @@ mkdir -p $KUBECONFIG_PATH
 k3sup install --local --ip $IP --user $USER_NAME
 cp `pwd`/kubeconfig $KUBECONFIG
 # disable basic auth
-k3sup app install openfaas -a false
+k3sup app install openfaas --basic-auth=false
 
 # run test in k3s
-# kubectl port-forward -n openfaas svc/gateway 8080:8080 &
-# sleep 60
+sleep 60
 export OPENFAAS_URL=http://$IP:31112/
 make -i test-kubernetes
