@@ -16,6 +16,7 @@ sudo install k3sup /usr/local/bin/
 mkdir -p $KUBECONFIG_PATH
 k3sup install --local --ip $IP --user $USER_NAME
 cp `pwd`/kubeconfig $KUBECONFIG
+
 # disable basic auth
 k3sup app install openfaas --basic-auth=false
 
