@@ -7,7 +7,7 @@ fi
 
 export IP=127.0.0.1
 export USER_NAME=$(whoami)
-export KUBECONFIG_FOLDER_PATH=/home/$USER_NAME/.kube/
+export KUBECONFIG_FOLDER_PATH=/home/$USER_NAME/.kube
 export KUBECONFIG_PATH=$KUBECONFIG_FOLDER_PATH/config
 
 # setup k3s using k3sup
